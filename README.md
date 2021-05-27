@@ -1,4 +1,4 @@
-# @ali/sonic
+# sonic-server
 
 ![Sonic](https://gw.alicdn.com/tps/TB1qqPfMXXXXXaiXXXXXXXXXXXX-800-600.png_320x320.jpg)
 
@@ -22,13 +22,19 @@ Image From: <https://dribbble.com/shots/2338954-Sonic-Speed>
 ### 命令行使用
 
 ```shell
-tnpm i @ali/sonic -g
+npm i sonic-server -g
+```
+
+然后
+
+```shell
+sonic
 ```
 
 ### 作为 lib
 
 ```shell
-tnpm i @ali/sonic -S
+npm i sonic-server -S
 ```
 
 ## 使用
@@ -79,7 +85,7 @@ h5 ➤ sonic -h
 ### 作为 lib
 
 ```
-var Sonic = require('@ali/sonic');
+var Sonic = require('sonic-server');
 var options = {
   // webpack 配置, 可为 webpack.config.js 路径或 webpack 配置对象
   webpackConfig: path.join(pwd, 'webpack.config.js'),
