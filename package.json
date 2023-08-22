@@ -1,6 +1,6 @@
 {
   "name": "sonic-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Front-end development env tool based on webpack & anyproxy",
   "main": "index.js",
   "bin": {
