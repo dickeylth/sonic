@@ -36,6 +36,10 @@ const initLogger = require('./lib/logger');
 const Constants = require('./lib/constants');
 const execSync = require('child_process').execSync;
 
+const isArm64 = () => {
+  return execSync('uname -m').toString().trim() === 'arm64';
+}
+
 const checkHttpsCA = (options) => {
   // create cert when you want to use https features
   // please manually trust this rootCA when it is the first time you run it
@@ -672,6 +676,7 @@ module.exports = (options, logger, callbackFn) => {
           serverPath = options.openUrl
             || ((`${protocol}://${options.hosts[0]}` || serverHost) + options.openPath);
           let cmd = [
+            isArm64() ? 'arch -arm64' : '',
             options.browserApp.replace(/\x20/g, '\\ '),
             `-proxy-server="http://127.0.0.1:${options.proxyPort}"`,
             '--auto-open-devtools-for-tabs',
